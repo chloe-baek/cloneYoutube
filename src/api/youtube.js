@@ -28,7 +28,6 @@ export default class Youtube {
           chart: 'mostPopular',
         },
       })
-
       .then((res) => res.data.items);
   }
 }
