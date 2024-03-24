@@ -14,12 +14,11 @@ export default function Videos() {
   } = useQuery({
     queryKey: ['videos', keyword],
     queryFn: () => youtube.search(keyword),
-    // const youtube = new FakeYoutube();
-    // return youtube.search(keyword);
+    staleTime: 100 * 60 * 1,
   });
   return (
     <>
-      <div>videos {keyword ? `🔎${keyword}` : '🔥'} </div>
+      {/* <div>videos {keyword ? `🔎${keyword}` : '🔥'} </div> */}
       {isLoading && <p>Loading...</p>}
       {error && <p>Something is wrong</p>}
       {videos && (
